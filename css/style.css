@@ -59,6 +59,7 @@ header{
   font-size: 17px;
   border-radius: 10px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
+  cursor: pointer;
 }
 
 /*footer*/
