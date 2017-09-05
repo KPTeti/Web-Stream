@@ -45,6 +45,20 @@ form.form-basic{
   }
 }
 
+form.form-basic-login{
+  max-width:40%;
+  margin:0 auto;
+  padding-bottom: 1px;
+  padding-top: 50px;
+}
+
+@media (max-width:991px) {
+  form.form-basic-login{
+    max-width:80%;
+    margin:0 auto;
+  }
+}
+
 .form-group{
   margin-bottom:15px;
 }
