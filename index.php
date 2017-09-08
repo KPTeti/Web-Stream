@@ -1,6 +1,6 @@
 <?php
-session_start();
-include 'authenticate.php';
+//session_start();
+//include 'authenticate.php';
 
 ?>
 
