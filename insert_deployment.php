@@ -11,14 +11,15 @@
         echo 'Database Not Selected';
     }
 
-    $Nama_Surveyor = $_POST['Nama_Surveyor'];
+    $Nama_Teknisi = $_POST['Nama_Teknisi'];
     $Kode_Angka_QR = $_POST['Kode_Angka_QR'];
     $Nama_ODP = $_POST['Nama_ODP'];
-    $Port_ODP = $_POST['Port_ODP'];
-    $No_Telpon_Pelanggan = $_POST['No_Telpon_Pelanggan'];
-    $SN_ONT = $_POST['SN_ONT'];
+    $Kapasitas_ODP = $_POST['Kapasitas_ODP'];
+    $Status_Port = $_POST['Status_Port'];
+    $Port_ODP_Input = $_POST['Port_ODP_Input'];
+    $Koordinat_ODP = $_POST['Koordinat_ODP'];
 
-    $sql = "INSERT INTO deployment (Nama_Surveyor, Kode_Angka_QR, Nama_ODP, Port_ODP, No_Telpon_Pelanggan, SN_ONT) VALUES ('$Nama_Surveyor', '$Kode_Angka_QR', '$Nama_ODP', '$Port_ODP', '$No_Telpon_Pelanggan', '$SN_ONT')";
+    $sql = "INSERT INTO deployment (Nama_Teknisi, Kode_Angka_QR, Nama_ODP, Kapasitas_ODP, Status_Port, Port_ODP_Input, Koordinat_ODP) VALUES ('$Nama_Teknisi', '$Kode_Angka_QR', '$Nama_ODP', '$Kapasitas_ODP', '$Status_Port', '$Port_ODP_Input', '$Koordinat_ODP')";
 
     if (!mysqli_query($con, $sql))
     {

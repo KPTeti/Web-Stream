@@ -27,11 +27,15 @@
           <h2> Layanan Pengisian Migration </h2>
       </div></section>
 
-<form class="form-basic" method="POST" action="php/insert_migration.php">
+<form class="form-basic" method="POST" action="insert_migration.php">
     <h4 class="text-center">Isikan data sesuai dengan form di bawah ini</h4>
-   <div class="form-group">
-       <label for="text-input" class="control-label">Nama Teknisi</label>
-        <input type="text" name="Nama_Teknisi" class="form-control" id="Nama_Teknisi" placeholder="Masukan nama teknisi" required="">
+<div class="form-group">
+        <label for="text-input" class="control-label">Nama Teknisi</label>
+        <select class="form-control" name="Nama_Teknisi" id="Nama_Teknisi" required="">
+            <option value="">Nama Teknisi</option>
+            <option value="amija1">AMIJA1</option>
+            <option value="amija2">AMIJA2</option>
+        </select>
     </div>
     <div class="form-group">
         <label for="text-input" class="control-label">Kode Angka QR</label>
@@ -47,7 +51,7 @@
     </div>
     <div class="form-group">
         <label for="text-input" class="control-label">Nomor Service</label>
-        <input type="number" name="No_Telpon_Pelanggan" class="form-control" id="No_Telpon_Pelanggan" placeholder="Masukan nomor telepon pelanggan" required="">
+        <input type="number" name="No_Service" class="form-control" id="No_Service" placeholder="Masukan nomor service" required="">
     </div>
     <div class="form-group">
         <label for="text-input" class="control-label">SN ONT</label>
