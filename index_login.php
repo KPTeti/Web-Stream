@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -13,8 +12,8 @@ session_start();
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style-click.css">
-</head>    
-    
+</head>
+
 <body>
     <form class="form-basic-login" method="POST" action="process.php">
         <h3 class="text-center">Silahkan Login</h3>
@@ -25,6 +24,9 @@ session_start();
         <div class="form-group">
             <label class="control-label" for="password-input">Password </label>
             <input class="form-control" type="password" name="pass" id="pass">
+        </div>
+        <div class="form-group">
+          <input type="hidden" name="state" value="login"/>
         </div>
         <div class="form-group">
             <button class="btn btn-success btn-block" type="submit" name="btn-login" value="login">Login </button>

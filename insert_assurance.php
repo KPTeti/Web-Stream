@@ -32,7 +32,7 @@
         
     }
 
-header("refresh:5; url=assurance.html");
+header("refresh:5; url=assurance.php");
 
 
 

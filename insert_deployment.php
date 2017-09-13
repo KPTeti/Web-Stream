@@ -16,10 +16,10 @@
     $Nama_ODP = $_POST['Nama_ODP'];
     $Kapasitas_ODP = $_POST['Kapasitas_ODP'];
     $Status_Port = $_POST['Status_Port'];
-    $Port_ODP_Input = $_POST['Port_ODP_Input'];
+    $Port_ODP = $_POST['Port_ODP'];
     $Koordinat_ODP = $_POST['Koordinat_ODP'];
 
-    $sql = "INSERT INTO deployment (Nama_Teknisi, Kode_Angka_QR, Nama_ODP, Kapasitas_ODP, Status_Port, Port_ODP_Input, Koordinat_ODP) VALUES ('$Nama_Teknisi', '$Kode_Angka_QR', '$Nama_ODP', '$Kapasitas_ODP', '$Status_Port', '$Port_ODP_Input', '$Koordinat_ODP')";
+    $sql = "INSERT INTO deployment (Nama_Teknisi, Kode_Angka_QR, Nama_ODP, Kapasitas_ODP, Status_Port, Port_ODP, Koordinat_ODP) VALUES ('$Nama_Teknisi', '$Kode_Angka_QR', '$Nama_ODP', '$Kapasitas_ODP', '$Status_Port', '$Port_ODP', '$Koordinat_ODP')";
 
     if (!mysqli_query($con, $sql))
     {
@@ -31,7 +31,7 @@
         echo 'Data berhasil dimasukkan. Halaman akan direfresh dalam 5 detik.';
     }
 
-header("refresh:5; url=deployment.html");
+header("refresh:5; url=deployment.php");
 
 
 

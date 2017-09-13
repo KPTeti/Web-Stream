@@ -1,9 +1,10 @@
 <?php
-//session_start();
-//include 'authenticate.php';
-
+session_start();
+$state = $_SESSION['state'];
+if ($state != "login") {
+  header('Location: index_login.php');
+}
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -38,15 +39,15 @@
 
   <section id="validation">
     <div class="container">
-        <a href="deployment.html"><button type="submit" class="button_1"> Deployment </button></a>
+        <a href="deployment.php"><button type="submit" class="button_1"> Deployment </button></a>
       <h3> </h3>
-        <a href="provisioning.html"><button type="submit" class="button_1"> Provisioning </button></a>
+        <a href="provisioning.php"><button type="submit" class="button_1"> Provisioning </button></a>
       <h3> </h3>
-        <a href="migration.html"><button type="submit" class="button_1"> Migration </button></a>
+        <a href="migration.php"><button type="submit" class="button_1"> Migration </button></a>
       <h3> </h3>
-        <a href="assurance.html"><button type="submit" class="button_1"> Assurance </button></a>
+        <a href="assurance.php"><button type="submit" class="button_1"> Assurance </button></a>
       <h3> </h3>
-        <a href="maintenance.html"><button type="submit" class="button_1"> Maintenance </button></a>
+        <a href="maintenance.php"><button type="submit" class="button_1"> Maintenance </button></a>
   </section>
 
   <footer>

@@ -30,7 +30,7 @@
         echo 'Data berhasil dimasukkan. Halaman akan direfresh dalam 5 detik.';
     }
 
-header("refresh:5; url=provisioning.html");
+header("refresh:5; url=provisioning.php");
 
 
 
