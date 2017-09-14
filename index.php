@@ -12,7 +12,7 @@ if ($state != "login") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Data Validation</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -49,6 +49,14 @@ if ($state != "login") {
       <h3> </h3>
         <a href="maintenance.php"><button type="submit" class="button_1"> Maintenance </button></a>
   </section>
+
+  
+    <div>
+    <a href="logout.php">
+    <button type="button" class="btn btn-warning">Logout</button>
+    </a>
+    </div>
+
 
   <footer>
     <p> Telekomunikasi Indonesia, Copyright &copy;2017 </p>
