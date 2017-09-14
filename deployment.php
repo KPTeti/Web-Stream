@@ -1,3 +1,10 @@
+<?php
+session_start();
+$state = $_SESSION['state'];
+if ($state != "login") {
+  header('Location: index_login.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 
