@@ -76,6 +76,11 @@ if ($state != "login") {
         </div>
       </form>
 
+ <div>
+    <a href="logout.php">
+    <button type="button" class="btn btn-warning">Logout</button>
+    </a>
+  </div>
       <!-- Modal HTML -->
       <div id="confirm-submit" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
