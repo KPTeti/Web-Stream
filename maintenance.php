@@ -1,10 +1,11 @@
 <?php
-session_start();
-$state = $_SESSION['state'];
-if ($state != "login") {
-  header('Location: index_login.php');
-}
+    session_start();
+    $state = $_SESSION['state'];
+    if ($state != "login") {
+      header('Location: index_login.php');
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -39,13 +40,9 @@ if ($state != "login") {
       <form class="form-basic" id="form" method="POST" action="insert_maintenance.php">
         <h4 class="text-center">Isikan data sesuai dengan form di bawah ini</h4>
         <div class="form-group">
-          <label for="text-input" class="control-label">Nama Teknisi</label>
-          <select class="form-control" name="Nama_Teknisi" id="Nama_Teknisi" required="">
-            <option value="">Nama Teknisi</option>
-            <option value="amija1">AMIJA1</option>
-            <option value="amija2">AMIJA2</option>
-          </select>
-        </div>
+        <label for="text-input" class="control-label">Nama Teknisi</label>
+        <input type="text" name="Nama_Teknisi" class="form-control" id="Nama_Teknisi" placeholder="Masukan Nama Teknisi" required="">
+    </div>
         <div class="form-group">
           <label for="text-input" class="control-label">Kode Angka QR</label>
           <input type="text" name="Kode_Angka_QR" class="form-control" id="Kode_Angka_QR" placeholder="Masukan kode angka QR" required="">
@@ -72,15 +69,13 @@ if ($state != "login") {
         </div>
         <div class="form-group">
           <input type="button" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-success btn-block" />
-        
         </div>
+      <div>
+         <a href="logout.php">
+         <button type="button" class="btn btn-warning">Logout</button>
+          </a>
+      </div>      
       </form>
-
-  <div>
-    <a href="logout.php">
-    <button type="button" class="btn btn-warning">Logout</button>
-    </a>
-  </div>    
 
       <!-- Modal HTML -->
       <div id="confirm-submit" class="modal fade" tabindex="-1" role="dialog">
@@ -146,7 +141,7 @@ if ($state != "login") {
           
         $('#submit').click(function () {
         /* when the submit button in the modal is clicked, submit the form */
-        alert('submitting');
+        alert('Data berhasil dikirim');
         $('#form').submit();
     });
       </script>
