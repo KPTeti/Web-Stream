@@ -32,6 +32,7 @@ header{
   height: auto;
 }
 
+
 form.form-basic{
   max-width:40%;
   margin:0 auto;
@@ -58,6 +59,7 @@ form.form-basic-login{
     margin:0 auto;
   }
 }
+
 
 .form-group{
   margin-bottom:15px;
