@@ -48,15 +48,10 @@ if ($state != "login") {
         <a href="assurance.php"><button type="submit" class="button_1"> Assurance </button></a>
       <h3> </h3>
         <a href="maintenance.php"><button type="submit" class="button_1"> Maintenance </button></a>
-  </section>
-
-  
-    <div>
-    <a href="logout.php">
-    <button type="button" class="btn btn-warning">Logout</button>
-    </a>
-    </div>
-
+        <h2> ___________________ </h2>
+        <a href="logout.php"><button type="submit" class="btn btn-warning">Logout</button></a>
+      </div>
+        </section>
 
   <footer>
     <p> Telekomunikasi Indonesia, Copyright &copy;2017 </p>
