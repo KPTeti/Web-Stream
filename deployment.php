@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    $state = $_SESSION['state'];
-    if ($state != "login") {
-      header('Location: index_login.php');
-    }
+session_start();
+$state = $_SESSION['state'];
+if ($state != "login") {
+  header('Location: index_login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,34 +40,34 @@
       <form class="form-basic" name="form" id="form" method="POST" action="insert_deployment.php">
         <h4 class="text-center">Isikan data sesuai dengan form di bawah ini</h4>
         <div class="form-group">
-        <label for="text-input" class="control-label">Nama Teknisi</label>
-        <input type="text" name="Nama_Teknisi" class="form-control" id="Nama_Teknisi" placeholder="Masukan Nama Teknisi" required="">
-    </div>
-    <div class="form-group">
-        <label for="text-input" class="control-label">Kode QR Port</label>
-        <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required="">
-    </div>
-    <div id="umpanbalik"></div>
+          <label for="text-input" class="control-label">Nama Teknisi</label>
+          <input type="text" name="Nama_Teknisi" class="form-control" id="Nama_Teknisi" placeholder="Masukan Nama Teknisi" required>
+        </div>
+        <div class="form-group">
+          <label for="text-input" class="control-label">Kode QR Port</label>
+          <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required>
+        </div>
+        <div id="umpanbalik"></div>
 
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $('#umpanbalik').load('cekDeployment.php').show();
+        <script type="text/javascript">
+        $(document).ready(function(){
+          $('#umpanbalik').load('cekDeployment.php').show();
 
-        $('#Kode_QR_Port').keyup(function() {
-          //$('#umpanbalik').append('d');
-          $.post("cekDeployment.php",
+          $('#Kode_QR_Port').keyup(function() {
+            //$('#umpanbalik').append('d');
+            $.post("cekDeployment.php",
             {kode_qr: $('#Kode_QR_Port').val()},
             function(response){
               $('#umpanbalik').html(response);
             });
+          });
         });
-      });
-    </script>
+        </script>
 
-    <div class="form-group">   
-        <label for="text-input" class="control-label">Nama ODP</label>
+        <div class="form-group">
+          <label for="text-input" class="control-label">Nama ODP</label>
 
-    <div class="form-group">
+          <div class="form-group">
             <div class="form-group col-sm-3">
               <label>ODP</label>
               <input type="text" class="form-control" value="ODP" name="odp1" id="odp1" onblur="combine()" readonly=readonly>
@@ -75,69 +75,70 @@
 
             <div class="form-group col-sm-3">
               <label>A</label>
-              <input type="text" class="form-control" value="" name="odp2" id="odp2" onblur="combine()" required="">
+              <input type="text" class="form-control" value="" name="odp2" id="odp2" onblur="combine()" required>
             </div>
 
             <div class="form-group col-sm-3">
               <label>B</label>
-              <input type="text" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required="">
+              <input type="text" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required>
             </div>
 
             <div class="form-group col-sm-3">
               <label>C</label>
-              <input type="text" class="form-control" value="" name="odp4" id="odp4" onblur="combine()" required="">
+              <input type="text" class="form-control" value="" name="odp4" id="odp4" onblur="combine()" required>
             </div>
 
-            <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" readonly=readonly required="">
-      </div>
-    </div>
+            <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" readonly=readonly required>
+          </div>
+        </div>
 
-         <script type = "text/javascript">
-          function combine() {
-            var odpcomb1 = document.form.odp1.value;
-            var odpcomb2 = document.form.odp2.value;
-            var odpcomb3 = document.form.odp3.value;
-            var odpcomb4 = document.form.odp4.value;
-            var combination = odpcomb1 + "-" + odpcomb2 + "-" + odpcomb3 + "/" + odpcomb4;
-            document.form.Nama_ODP.value = combination;
-          }
-         </script>
-  
-    <div class="form-group">
-        <label for="text-input" class="control-label">Kapasitas ODP</label>
-        <input type="number" name="Kapasitas_ODP" class="form-control" id="Kapasitas_ODP" placeholder="Masukan kapasitas ODP" required="">
-    </div>
-    <div class="form-group">
-        <label for="text-input" class="control-label">Status Port</label>
-        <select class="form-control" name="Status_Port" id="Status_Port" placeholder="Status Port" required="">
+        <script type = "text/javascript">
+        function combine() {
+          var odpcomb1 = document.form.odp1.value;
+          var odpcomb2 = document.form.odp2.value;
+          var odpcomb3 = document.form.odp3.value;
+          var odpcomb4 = document.form.odp4.value;
+          var combination = odpcomb1 + "-" + odpcomb2 + "-" + odpcomb3 + "/" + odpcomb4;
+          document.form.Nama_ODP.value = combination;
+        }
+        </script>
+
+        <div class="form-group">
+          <label for="text-input" class="control-label">Kapasitas ODP</label>
+          <input type="number" name="Kapasitas_ODP" class="form-control" id="Kapasitas_ODP" placeholder="Masukan kapasitas ODP" required>
+        </div>
+        <div class="form-group">
+          <label for="text-input" class="control-label">Status Port</label>
+          <select class="form-control" name="Status_Port" id="Status_Port" placeholder="Status Port" required>
             <option value="Kosong">Kosong</option>
             <option value="Isi">Isi</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="text-input" class="control-label">Port ODP Input</label>
-        <input type="text" name="Port_ODP" class="form-control" id="Port_ODP" placeholder="Masukan port ODP" required="">
-    </div>
-    <div class="form-group">
-        <label for="text-input" class="control-label">Koordinat ODP</label>
-        <input type="text" name="Koordinat_ODP" class="form-control" id="Koordinat_ODP" placeholder="Masukan koordinat ODP" required="">
-    </div>
-    <div class="form-group">
-        <label class="control-label">Catatan:</label>
-        <p class="form-static-control">Harap periksa kembali data yang sudah Anda masukan. Form tidak boleh ada yang kosong.</p>
-    </div>
-        <div class="form-group">
-          <input type="submit" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-success btn-block" />
+          </select>
         </div>
-      <div>
-         <a href="logout.php">
-         <button type="button" class="btn btn-warning">Logout</button>
+        <div class="form-group">
+          <label for="text-input" class="control-label">Port ODP Input</label>
+          <input type="text" name="Port_ODP" class="form-control" id="Port_ODP" placeholder="Masukan port ODP" required>
+        </div>
+        <div class="form-group">
+          <label for="text-input" class="control-label">Koordinat ODP</label>
+          <input type="text" name="Koordinat_ODP" class="form-control" id="Koordinat_ODP" placeholder="Masukan koordinat ODP" required>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Catatan:</label>
+          <p class="form-static-control">Harap periksa kembali data yang sudah Anda masukan. Form tidak boleh ada yang kosong.</p>
+        </div>
+        <div class="form-group">
+          <button type="button" id="myBtn" class="btn btn-success btn-block">Submit</button>
+          <!-- <input type="submit" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-success btn-block" /> -->
+        </div>
+        <div>
+          <a href="logout.php">
+            <button type="button" class="btn btn-warning">Logout</button>
           </a>
-      </div> 
+        </div>
       </form>
-      
+
       <!-- Modal HTML -->
-      <div id="confirm-submit" class="modal fade" tabindex="-1" role="dialog">
+      <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -160,11 +161,11 @@
                     <th>Nama ODP: </th>
                     <td id="nama_odp"></td>
                   </tr>
-                    <tr>
+                  <tr>
                     <th>Kapasitas ODP: </th>
                     <td id="kapasitas_odp"></td>
                   </tr>
-                    <tr>
+                  <tr>
                     <th>Status Port: </th>
                     <td id="status_port"></td>
                   </tr>
@@ -193,26 +194,35 @@
       </footer>
 
 
-      <script type="text/javascript">
-      $('#submitBtn').click(function() {
-        $('#nama_teknisi').text($('#Nama_Teknisi').val());
-        $('#qr_port').text($('#Kode_QR_Port').val());
-        $('#nama_odp').text($('#Nama_ODP').val());
-        $('#kapasitas_odp').text($('#Kapasitas_ODP').val());
-          $('#status_port').text($('#Status_Port').val());
-        $('#port_odp').text($('#Port_ODP').val());
-        $('#koordinat_odp').text($('#Koordinat_ODP').val());
+      <script>
+      $(function(){
+        $("#myBtn").click(function(){
+          var form = $("#form");
+          form.validate();
+          if (form.valid()) {
+            $("#myModal").modal();
+            $('#nama_teknisi').text($('#Nama_Teknisi').val());
+            $('#qr_port').text($('#Kode_QR_Port').val());
+            $('#nama_odp').text($('#Nama_ODP').val());
+            $('#kapasitas_odp').text($('#Kapasitas_ODP').val());
+            $('#status_port').text($('#Status_Port').val());
+            $('#port_odp').text($('#Port_ODP').val());
+            $('#koordinat_odp').text($('#Koordinat_ODP').val());
+            $('#submit').click(function () {
+              /* when the submit button in the modal is clicked, submit the form */
+              alert('Data berhasil dikirim');
+              $('#form').submit();
+            });
+          } else {
+            alert("Please complete the forms");
+          }
+        });
       });
-          
-        $('#submit').click(function () {
-        /* when the submit button in the modal is clicked, submit the form */
-        alert('Data berhasil dikirim');
-        $('#form').submit();
-    });
       </script>
       <script src="main.js"></script>
       <script src="assets/js/jquery.min.js"></script>
       <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
     </body>
 
     </html>
