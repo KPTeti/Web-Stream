@@ -12,17 +12,17 @@
     }
 
     $Nama_Teknisi = $_POST['Nama_Teknisi'];
-    $Kode_Angka_QR = $_POST['Kode_Angka_QR'];
+    $Kode_QR_Port = $_POST['Kode_QR_Port'];
     $Nama_ODP = $_POST['Nama_ODP'];
     $Port_ODP = $_POST['Port_ODP'];
     $No_Service = $_POST['No_Service'];
     $SN_ONT = $_POST['SN_ONT'];
 
-    $sql = "INSERT INTO maintenance (Nama_Teknisi, Kode_Angka_QR, Nama_ODP, Port_ODP, No_Service, SN_ONT) VALUES ('$Nama_Teknisi', '$Kode_Angka_QR', '$Nama_ODP', '$Port_ODP', '$No_Service', '$SN_ONT')";
+    $sql = "INSERT INTO maintenance (Nama_Teknisi, Kode_QR_Port, Nama_ODP, Port_ODP, No_Service, SN_ONT) VALUES ('$Nama_Teknisi', '$Kode_QR_Port', '$Nama_ODP', '$Port_ODP', '$No_Service', '$SN_ONT')";
 
     if (!mysqli_query($con, $sql))
     {
-        echo 'Data Gagal Dimasukkan';
+        echo 'Kode Angka QR sudah pernah dimasukkan.';
     }
 
     else

@@ -12,18 +12,18 @@
     }
 
     $Nama_Teknisi = $_POST['Nama_Teknisi'];
-    $Kode_Angka_QR = $_POST['Kode_Angka_QR'];
+    $Kode_QR_Port = $_POST['Kode_QR_Port'];
     $Nama_ODP = $_POST['Nama_ODP'];
     $Kapasitas_ODP = $_POST['Kapasitas_ODP'];
     $Status_Port = $_POST['Status_Port'];
     $Port_ODP = $_POST['Port_ODP'];
     $Koordinat_ODP = $_POST['Koordinat_ODP'];
 
-    $sql = "INSERT INTO deployment (Nama_Teknisi, Kode_Angka_QR, Nama_ODP, Kapasitas_ODP, Status_Port, Port_ODP, Koordinat_ODP) VALUES ('$Nama_Teknisi', '$Kode_Angka_QR', '$Nama_ODP', '$Kapasitas_ODP', '$Status_Port', '$Port_ODP', '$Koordinat_ODP')";
+    $sql = "INSERT INTO deployment (Nama_Teknisi, Kode_QR_Port, Nama_ODP, Kapasitas_ODP, Status_Port, Port_ODP, Koordinat_ODP) VALUES ('$Nama_Teknisi', '$Kode_QR_Port', '$Nama_ODP', '$Kapasitas_ODP', '$Status_Port', '$Port_ODP', '$Koordinat_ODP')";
 
     if (!mysqli_query($con, $sql))
     {
-        echo 'Data Gagal Dimasukkan';
+        echo 'Kode Angka QR sudah pernah dimasukkan.';
     }
 
     else

@@ -44,8 +44,8 @@
         <input type="text" name="Nama_Teknisi" class="form-control" id="Nama_Teknisi" placeholder="Masukan Nama Teknisi" required="">
     </div>
         <div class="form-group">
-          <label for="text-input" class="control-label">Kode Angka QR</label>
-          <input type="text" name="Kode_Angka_QR" class="form-control" id="Kode_Angka_QR" placeholder="Masukan kode angka QR" required="">
+          <label for="text-input" class="control-label">Kode QR Port</label>
+          <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required="">
         </div>
         <div class="form-group">
           <label for="text-input" class="control-label">Nama ODP</label>
@@ -95,7 +95,7 @@
                   </tr>
                   <tr>
                     <th>Kode Angka QR: </th>
-                    <td id="kode_angka"></td>
+                    <td id="qr_port"></td>
                   </tr>
                   <tr>
                     <th>Nama ODP: </th>
@@ -132,7 +132,7 @@
       <script type="text/javascript">
       $('#submitBtn').click(function() {
         $('#nama_teknisi').text($('#Nama_Teknisi').val());
-        $('#kode_angka').text($('#Kode_Angka_QR').val());
+        $('#qr_port').text($('#Kode_QR_Port').val());
         $('#nama_odp').text($('#Nama_ODP').val());
         $('#port_odp').text($('#Port_ODP').val());
         $('#nomor_service').text($('#No_Service').val());
