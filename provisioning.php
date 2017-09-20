@@ -46,7 +46,22 @@
         <div class="form-group">
           <label for="text-input" class="control-label">Kode QR Port</label>
           <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required="">
-        </div>
+    </div>
+    <div id="umpanbalik"></div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#umpanbalik').load('cekProvisioning.php').show();
+
+        $('#Kode_QR_Port').keyup(function() {
+          //$('#umpanbalik').append('d');
+          $.post("cekProvisioning.php",
+            {kode_qr: $('#Kode_QR_Port').val()},
+            function(response){
+              $('#umpanbalik').html(response);
+            });
+        });
+      });
+    </script>
 
 <div class="form-group">   
         <label for="text-input" class="control-label">Nama ODP</label>
