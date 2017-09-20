@@ -21,19 +21,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script type="text/javascript">
-    $(document) .ready(function() {
-      $('#feedback') .load('check_qr.php').show();
-
-      $('#Kode_Angka_QR') .keyup(function() {
-        $.post('check_qr.php', { Kode_Angka_QR: form.Kode_Angka_QR.value }, function(result) {
-          $('#feedback').html(result).show();
-        });
-      });
-
-    });   
-  </script>
-
   <body>
     <header>
       <div class="container">
@@ -50,7 +37,7 @@
         <h2> Layanan Pengisian Deployment </h2>
       </div></section>
 
-      <form class="form-basic" id="form" method="POST" action="insert_deployment.php">
+      <form class="form-basic" name="form" id="form" method="POST" action="insert_deployment.php">
         <h4 class="text-center">Isikan data sesuai dengan form di bawah ini</h4>
         <div class="form-group">
         <label for="text-input" class="control-label">Nama Teknisi</label>
@@ -60,15 +47,46 @@
         <label for="text-input" class="control-label">Kode QR Port</label>
         <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required="">
       </div>
-    <!--
-    </div>
-    <div class="form-group" id="feedback">
-    </div>
-  -->
-    <div class="form-group">
+    
+    <div class="form-group">   
         <label for="text-input" class="control-label">Nama ODP</label>
-        <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" placeholder="Masukan nama ODP" required="">
+
+    <div class="form-group">
+            <div class="form-group col-sm-3">
+              <label>ODP</label>
+              <input type="text" class="form-control" value="ODP" name="odp1" id="odp1" onblur="combine()" readonly=readonly>
+            </div>
+
+            <div class="form-group col-sm-3">
+              <label>A</label>
+              <input type="text" class="form-control" value="" name="odp2" id="odp2" onblur="combine()" required="">
+            </div>
+
+            <div class="form-group col-sm-3">
+              <label>B</label>
+              <input type="text" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required="">
+            </div>
+
+            <div class="form-group col-sm-3">
+              <label>C</label>
+              <input type="text" class="form-control" value="" name="odp4" id="odp4" onblur="combine()" required="">
+            </div>
+
+            <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" readonly=readonly required="">
+      </div>
     </div>
+
+         <script type = "text/javascript">
+          function combine() {
+            var odpcomb1 = document.form.odp1.value;
+            var odpcomb2 = document.form.odp2.value;
+            var odpcomb3 = document.form.odp3.value;
+            var odpcomb4 = document.form.odp4.value;
+            var combination = odpcomb1 + "-" + odpcomb2 + "-" + odpcomb3 + "/" + odpcomb4;
+            document.form.Nama_ODP.value = combination;
+          }
+         </script>
+  
     <div class="form-group">
         <label for="text-input" class="control-label">Kapasitas ODP</label>
         <input type="number" name="Kapasitas_ODP" class="form-control" id="Kapasitas_ODP" placeholder="Masukan kapasitas ODP" required="">
@@ -93,7 +111,7 @@
         <p class="form-static-control">Harap periksa kembali data yang sudah Anda masukan. Form tidak boleh ada yang kosong.</p>
     </div>
         <div class="form-group">
-          <input type="button" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-success btn-block" />
+          <input type="submit" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-success btn-block" />
         </div>
       <div>
          <a href="logout.php">

@@ -37,7 +37,7 @@
             <h2> Layanan Pengisian Assurance </h2>
           </div></section>
 
-          <form class="form-basic" id="form" method="POST" action="insert_assurance.php">
+          <form class="form-basic" name="form" id="form" method="POST" action="insert_assurance.php">
             <h4 class="text-center">Isikan data sesuai dengan form di bawah ini</h4>
             <div class="form-group">
               <label for="text-input" class="control-label">Nama Teknisi</label>
@@ -47,10 +47,45 @@
               <label for="text-input" class="control-label">Kode QR Port</label>
               <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required="">
             </div>
-            <div class="form-group">
+
+            <div class="form-group">   
               <label for="text-input" class="control-label">Nama ODP</label>
-              <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" placeholder="Masukan nama ODP" required="">
+              <div class="form-group">
+                <div class="form-group col-sm-3">
+              <label>ODP</label>
+              <input type="text" class="form-control" value="ODP" name="odp1" id="odp1" onblur="combine()" readonly=readonly>
             </div>
+
+            <div class="form-group col-sm-3">
+              <label>A</label>
+              <input type="text" class="form-control" value="" name="odp2" id="odp2" onblur="combine()" required="">
+            </div>
+
+            <div class="form-group col-sm-3">
+              <label>B</label>
+              <input type="text" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required="">
+            </div>
+
+            <div class="form-group col-sm-3">
+              <label>C</label>
+              <input type="text" class="form-control" value="" name="odp4" id="odp4" onblur="combine()" required="">
+            </div>
+
+            <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" readonly=readonly required="">
+      </div>
+    </div>
+
+         <script type = "text/javascript">
+          function combine() {
+            var odpcomb1 = document.form.odp1.value;
+            var odpcomb2 = document.form.odp2.value;
+            var odpcomb3 = document.form.odp3.value;
+            var odpcomb4 = document.form.odp4.value;
+            var combination = odpcomb1 + "-" + odpcomb2 + "-" + odpcomb3 + "/" + odpcomb4;
+            document.form.Nama_ODP.value = combination;
+          }
+         </script>
+
             <div class="form-group">
               <label for="text-input" class="control-label">Port ODP</label>
               <input type="text" name="Port_ODP" class="form-control" id="Port_ODP" placeholder="Masukan port ODP" required="">
