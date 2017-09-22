@@ -46,8 +46,8 @@
         <div class="form-group">
           <label for="text-input" class="control-label">Kode QR Port</label>
           <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required="">
+          <div id="umpanbalik"></div>
     </div>
-    <div id="umpanbalik"></div>
     <script type="text/javascript">
       $(document).ready(function(){
         $('#umpanbalik').load('cekMaintenance.php').show();
@@ -87,31 +87,49 @@
               <input type="text" class="form-control" value="" name="odp4" id="odp4" onblur="combine()" required="">
             </div>
 
-            <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" readonly=readonly required="">
+            <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" readonly=readonly>
       </div>
     </div>
 
-         <script type = "text/javascript">
-          function combine() {
-            var odpcomb1 = document.form.odp1.value;
-            var odpcomb2 = document.form.odp2.value;
-            var odpcomb3 = document.form.odp3.value;
-            var odpcomb4 = document.form.odp4.value;
-            var combination = odpcomb1 + "-" + odpcomb2 + "-" + odpcomb3 + "/" + odpcomb4;
-            document.form.Nama_ODP.value = combination;
-          }
-         </script>
-
-
+    <script type = "text/javascript">
+     function combine() {
+       var odp1 = document.form.odp1.value;
+       var odp2 = document.form.odp2.value;
+       var odp3 = document.form.odp3.value;
+       var odp4 = document.form.odp4.value;
+       var combination = odp1 + "-" + odp2 + "-" + odp3 + "/" + odp4;
+       document.form.Nama_ODP.value = combination;
+     }
+    </script>
 
         <div class="form-group">
           <label for="text-input" class="control-label">Port ODP</label>
           <input type="text" name="Port_ODP" class="form-control" id="Port_ODP" placeholder="Masukan port ODP" required="">
         </div>
+        
         <div class="form-group">
           <label for="text-input" class="control-label">Nomor Service</label>
-          <input type="number" name="No_Service" class="form-control" id="No_Service" placeholder="Masukan nomor service" required="">
+
+          <div class="form-group">
+                <div class="form-group col-sm-3">
+                    <input type="text" class="form-control" value="0274" name="no_telpon1" id="no_telpon1" onblur="combine_no()" readonly=readonly>
+                </div>
+                <div class="form-group col-sm-9">
+                    <input type="text" class="form-control" value="" name="no_telpon2" id="no_telpon2" onblur="combine_no()" required="">
+                </div>
+                <input type="text" name="No_Service" class="form-control" id="No_Service" readonly=readonly>
         </div>
+        </div>
+
+        <script>
+          function combine_no() {
+            var no_telpon1 = document.form.no_telpon1.value;
+            var no_telpon2 = document.form.no_telpon2.value;
+            var no_service = no_telpon1 + "-" + no_telpon2;
+            document.form.No_Service.value = no_service;
+          }
+        </script>
+
         <div class="form-group">
           <label for="text-input" class="control-label">SN ONT</label>
           <input type="text" name="SN_ONT" class="form-control" id="SN_ONT" placeholder="Masukan SN ONT" required="">
@@ -121,7 +139,7 @@
           <p class="form-static-control">Harap periksa kembali data yang sudah Anda masukan. Form tidak boleh ada yang kosong.</p>
         </div>
         <div class="form-group">
-          <input type="button" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-success btn-block" />
+          <button type="button" id="myBtn" class="btn btn-success btn-block">Submit</button>
         </div>
       <div>
          <a href="logout.php">
@@ -131,7 +149,7 @@
       </form>
 
       <!-- Modal HTML -->
-      <div id="confirm-submit" class="modal fade" tabindex="-1" role="dialog">
+      <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -182,25 +200,35 @@
         <p> Telekomunikasi Indonesia, Copyright ©2017 </p>
       </footer>
 
-      <script type="text/javascript">
-      $('#submitBtn').click(function() {
-        $('#nama_teknisi').text($('#Nama_Teknisi').val());
-        $('#qr_port').text($('#Kode_QR_Port').val());
-        $('#nama_odp').text($('#Nama_ODP').val());
-        $('#port_odp').text($('#Port_ODP').val());
-        $('#nomor_service').text($('#No_Service').val());
-        $('#sn_ont').text($('#SN_ONT').val());
+      <script>
+      $(function(){
+        $("#myBtn").click(function(){
+          var form = $("#form");
+          form.validate();
+          if (form.valid()) {
+            $("#myModal").modal();
+              $('#nama_teknisi').text($('#Nama_Teknisi').val());
+              $('#qr_port').text($('#Kode_QR_Port').val());
+              $('#nama_odp').text($('#Nama_ODP').val());
+              $('#port_odp').text($('#Port_ODP').val());
+              $('#nomor_service').text($('#No_Service').val());
+              $('#sn_ont').text($('#SN_ONT').val());
+              $('#submit').click(function () {
+                /* when the submit button in the modal is clicked, submit the form */
+                alert('Data berhasil dikirim');
+                $('#form').submit();
+              });
+            } else {
+              alert("Mohon data dilengkapi");
+          }
+        });
       });
-          
-        $('#submit').click(function () {
-        /* when the submit button in the modal is clicked, submit the form */
-        alert('Data berhasil dikirim');
-        $('#form').submit();
-    });
       </script>
+
       <script src="main.js"></script>
       <script src="assets/js/jquery.min.js"></script>
       <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
     </body>
 
     </html>

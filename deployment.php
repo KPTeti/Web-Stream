@@ -46,8 +46,9 @@ if ($state != "login") {
         <div class="form-group">
           <label for="text-input" class="control-label">Kode QR Port</label>
           <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required>
+          <div id="umpanbalik"></div>
         </div>
-        <div id="umpanbalik"></div>
+        
 
         <script type="text/javascript">
         $(document).ready(function(){
@@ -88,19 +89,19 @@ if ($state != "login") {
               <input type="text" class="form-control" value="" name="odp4" id="odp4" onblur="combine()" required>
             </div>
 
-            <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" readonly=readonly required>
+            <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" readonly=readonly>
           </div>
         </div>
 
         <script type = "text/javascript">
-        function combine() {
-          var odpcomb1 = document.form.odp1.value;
-          var odpcomb2 = document.form.odp2.value;
-          var odpcomb3 = document.form.odp3.value;
-          var odpcomb4 = document.form.odp4.value;
-          var combination = odpcomb1 + "-" + odpcomb2 + "-" + odpcomb3 + "/" + odpcomb4;
-          document.form.Nama_ODP.value = combination;
-        }
+         function combine() {
+           var odp1 = document.form.odp1.value;
+           var odp2 = document.form.odp2.value;
+           var odp3 = document.form.odp3.value;
+           var odp4 = document.form.odp4.value;
+           var combination = odp1 + "-" + odp2 + "-" + odp3 + "/" + odp4;
+           document.form.Nama_ODP.value = combination;
+         }
         </script>
 
         <div class="form-group">
@@ -128,7 +129,6 @@ if ($state != "login") {
         </div>
         <div class="form-group">
           <button type="button" id="myBtn" class="btn btn-success btn-block">Submit</button>
-          <!-- <input type="submit" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-success btn-block" /> -->
         </div>
         <div>
           <a href="logout.php">
@@ -214,7 +214,7 @@ if ($state != "login") {
               $('#form').submit();
             });
           } else {
-            alert("Please complete the forms");
+            alert("Mohon data dilengkapi");
           }
         });
       });
