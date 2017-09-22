@@ -1,0 +1,74 @@
+body{
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  padding : 0;
+  margin : 0;
+  background-color : white;
+}
+
+/* Global */
+.container {
+  width : 88%;
+  margin :auto;
+  overflow: hidden;
+}
+
+/*Header **/
+header{
+  background-color: white;
+  padding-bottom: : 15px;
+  min-height: 30px;
+  display: block;
+  margin : 0 auto;
+  max-width: 250px;
+  width : 100%;;
+  text-align: center;
+}
+
+/*headtext*/
+#headtext{
+  background-color: #CD0000;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  height: auto;
+
+}
+
+/*choicetext*/
+#choicetext{
+  text-align: center;
+  font-size: 15px;
+}
+
+/*validation*/
+#validation{
+    text-align: center;
+    padding-bottom: 0px;
+    color: white;
+    font-size: 12px;
+}
+
+.button_1 {
+  height: 40px;
+  width: 200px;
+  background: #CD0000;
+  border: 0;
+  color: white;
+  font-size: 17px;
+  border-radius: 10px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+/*footer*/
+footer{
+  padding: 8px;
+  margin-top: 8px;
+  background-color: #CD0000;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
