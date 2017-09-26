@@ -73,17 +73,30 @@
             </div>
 
             <div class="form-group col-sm-3">
-              <label>A</label>
-              <input type="text" class="form-control" value="" name="odp2" id="odp2" onblur="combine()" required="">
+              <label>STO</label>
+              <select class="form-control" name="odp2" id="odp2" onblur="combine()" required>
+                  <option value="BBS">BBS</option>
+                  <option value="BTL">BTL</option>
+                  <option value="KEN">GOD</option>
+                  <option value="KBU">KBU</option>
+                  <option value="KEN">KEN</option>
+                  <option value="KEN">KGD</option>
+                  <option value="KEN">KLS</option>
+                  <option value="PGR">PGR</option>
+                  <option value="KEN">PKM/KLU</option>
+                  <option value="KEN">SMN</option>
+                  <option value="PGR">WNS</option>
+                  <option value="KEN">WTS</option>
+              </select>
             </div>
 
             <div class="form-group col-sm-3">
-              <label>B</label>
+              <label>ODC</label>
               <input type="text" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required="">
             </div>
 
             <div class="form-group col-sm-3">
-              <label>C</label>
+              <label>/--</label>
               <input type="text" class="form-control" value="" name="odp4" id="odp4" onblur="combine()" required="">
             </div>
 
