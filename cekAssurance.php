@@ -2,10 +2,7 @@
 	
 	$con = mysqli_connect('127.0.0.1', 'root', '');
     mysqli_select_db($con, 'database_stream');
-	
-	if (isset($_POST['Kode_QR_Port'])) {
-			$kode_qr = $_POST['Kode_QR_Port'];
-	}
+
 
 	if (isset($_POST) & !empty($_POST)) {
 		$kode_qr = mysqli_real_escape_string($con, $_POST['kode_qr']);
@@ -17,7 +14,6 @@
 				echo '<div style="color:red;"<b>'.$kode_qr.'</b> sudah pernah dimasukan</div>';
 		}
 		else{
-			//echo '<div style="color:green;"<b>'.$kode_angka.'</b> is available</div>';
 			echo " ";
 		}
 	}
