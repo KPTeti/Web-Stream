@@ -23,14 +23,12 @@ if ($state != "login") {
 
   <body>
     <header>
-      <div class="container">
-        <div id="branding">
-          <a href="index.php">
-            <img src="https://www.nyse.com/publicdocs/nyse/events/images/TLK_WEB_1920.png" style="width:250px;height:145px;">
-          </a>
-        </div>
+      <div id="branding">
+        <a href="index.php">
+          <img src="img\telkom.png" style="width:250px;height: auto; padding: 15px;">
+        </a>
       </div>
-    </header>
+  </header>
 
     <section id="headtext">
       <div class="container">
@@ -93,12 +91,12 @@ if ($state != "login") {
 
                     <div class="form-group col-sm-3">
                       <label>ODC</label>
-                      <input type="text" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required="">
+                      <input type="number" min="0" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required="">
                     </div>
 
                     <div class="form-group col-sm-3">
                       <label>/--</label>
-                      <input type="text" class="form-control" value="" name="odp4" id="odp4" onblur="combine()" required="">
+                      <input type="number" min="0" class="form-control" value="" name="odp4" id="odp4" onblur="combine()" required="">
                     </div>
 
                     <input type="text" name="Nama_ODP" class="form-control" id="Nama_ODP" readonly=readonly>
@@ -129,7 +127,7 @@ if ($state != "login") {
                             <input type="text" class="form-control" value="0274" name="no_telpon1" id="no_telpon1" onblur="combine_no()" readonly=readonly>
                         </div>
                         <div class="form-group col-sm-9">
-                            <input type="text" class="form-control" value="" name="no_telpon2" id="no_telpon2" onblur="combine_no()" required="">
+                            <input type="number" min="0" class="form-control" value="" name="no_telpon2" id="no_telpon2" onblur="combine_no()" required="">
                         </div>
                         <input type="text" name="No_Service" class="form-control" id="No_Service" readonly=readonly>
                 </div>

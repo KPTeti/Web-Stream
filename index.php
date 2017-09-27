@@ -18,14 +18,12 @@ if ($state != "login") {
 
 <body>
   <header>
-    <div class="container">
-      <div id="branding">
-          <a href="index.php">
-        <img src="https://www.nyse.com/publicdocs/nyse/events/images/TLK_WEB_1920.png" style="width:250px;height:145px;">
-          </a>
-      </div>
-    </div>
-  </header>
+       <div id="branding">
+         <a href="index.php">
+           <img src="img\telkom.png" style="width:250px;height: auto; padding: 15px;">
+         </a>
+       </div>
+   </header>
 
   <section id="headtext">
     <div class="container">
