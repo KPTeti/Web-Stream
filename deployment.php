@@ -44,8 +44,8 @@ if ($state != "login") {
           <input type="text" name="Nama_Teknisi" class="form-control" id="Nama_Teknisi" placeholder="Masukan Nama Teknisi" required>
         </div>
         <div class="form-group">
-          <label for="text-input" class="control-label">Kode QR Port</label>
-          <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required>
+          <label for="text-input" class="control-label">Kode QR ODP</label>
+          <input type="text" name="Kode_QR_ODP" class="form-control" id="Kode_QR_ODP" placeholder="Masukan kode QR Port" required>
           <div id="umpanbalik"></div>
         </div>
         
@@ -129,10 +129,6 @@ if ($state != "login") {
           </select>
         </div>
         <div class="form-group">
-          <label for="text-input" class="control-label">Port ODP Input</label>
-          <input type="text" name="Port_ODP" class="form-control" id="Port_ODP" placeholder="Masukan port ODP" required>
-        </div>
-        <div class="form-group">
           <label for="text-input" class="control-label">Koordinat ODP</label>
           <input type="text" name="Koordinat_ODP" class="form-control" id="Koordinat_ODP" placeholder="Masukan koordinat ODP" required>
         </div>
@@ -167,7 +163,7 @@ if ($state != "login") {
                     <td id="nama_teknisi"></td>
                   </tr>
                   <tr>
-                    <th>Kode Angka QR: </th>
+                    <th>Kode QR ODP: </th>
                     <td id="qr_port"></td>
                   </tr>
                   <tr>
@@ -181,10 +177,6 @@ if ($state != "login") {
                   <tr>
                     <th>Status Port: </th>
                     <td id="status_port"></td>
-                  </tr>
-                  <tr>
-                    <th>Port ODP Input: </th>
-                    <td id="port_odp"></td>
                   </tr>
                   <tr>
                     <th>Koordinat ODP: </th>
@@ -215,7 +207,7 @@ if ($state != "login") {
           if (form.valid()) {
             $("#myModal").modal();
             $('#nama_teknisi').text($('#Nama_Teknisi').val());
-            $('#qr_port').text($('#Kode_QR_Port').val());
+            $('#qr_port').text($('#Kode_QR_ODP').val());
             $('#nama_odp').text($('#Nama_ODP').val());
             $('#kapasitas_odp').text($('#Kapasitas_ODP').val());
             $('#status_port').text($('#Status_Port').val());
