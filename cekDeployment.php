@@ -5,7 +5,7 @@
 
 	if (isset($_POST) & !empty($_POST)) {
 		$kode_qr = mysqli_real_escape_string($con, $_POST['kode_qr']);
-		$sql = "SELECT * from deployment WHERE Kode_QR_Port = '$kode_qr'";
+		$sql = "SELECT * from deployment WHERE Kode_QR_ODP = '$kode_qr'";
 
 		$result = mysqli_query($con, $sql);
 		$count = mysqli_num_rows($result);
