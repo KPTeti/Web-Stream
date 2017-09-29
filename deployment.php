@@ -43,19 +43,19 @@ if ($state != "login") {
         </div>
         <div class="form-group">
           <label for="text-input" class="control-label">Kode QR ODP</label>
-          <input type="text" name="Kode_QR_ODP" class="form-control" id="Kode_QR_ODP" placeholder="Masukan kode QR Port" required>
+          <input type="text" name="Kode_QR_ODP" class="form-control" id="Kode_QR_ODP" placeholder="Masukan kode QR ODP" required>
           <div id="umpanbalik"></div>
         </div>
-        
+
 
         <script type="text/javascript">
         $(document).ready(function(){
-          $('#umpanbalik').load('cekDeployment.php').show();
+          $('#umpanbalik').load('cekTable.php').show();
 
-          $('#Kode_QR_Port').keyup(function() {
+          $('#Kode_QR_ODP').keyup(function() {
             //$('#umpanbalik').append('d');
-            $.post("cekDeployment.php",
-            {kode_qr: $('#Kode_QR_Port').val()},
+            $.post("cekTable.php",
+            {kode_qr: $('#Kode_QR_ODP').val()},
             function(response){
               $('#umpanbalik').html(response);
             });
@@ -77,22 +77,22 @@ if ($state != "login") {
               <select class="form-control" name="odp2" id="odp2" onblur="combine()" required>
                   <option value="BBS">BBS</option>
                   <option value="BTL">BTL</option>
-                  <option value="KEN">GOD</option>
+                  <option value="GOD">GOD</option>
                   <option value="KBU">KBU</option>
                   <option value="KEN">KEN</option>
-                  <option value="KEN">KGD</option>
-                  <option value="KEN">KLS</option>
+                  <option value="KGD">KGD</option>
+                  <option value="KLS">KLS</option>
                   <option value="PGR">PGR</option>
-                  <option value="KEN">PKM/KLU</option>
-                  <option value="KEN">SMN</option>
-                  <option value="PGR">WNS</option>
-                  <option value="KEN">WTS</option>
+                  <option value="PKM/KLU">PKM/KLU</option>
+                  <option value="SMN">SMN</option>
+                  <option value="WNS">WNS</option>
+                  <option value="WTS">WTS</option>
               </select>
             </div>
 
             <div class="form-group col-sm-3">
               <label>ODC</label>
-              <input type="number" min="0" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required>
+              <input type="text" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required>
             </div>
 
             <div class="form-group col-sm-3">
@@ -117,7 +117,7 @@ if ($state != "login") {
 
         <div class="form-group">
           <label for="text-input" class="control-label">Kapasitas ODP</label>
-          <input type="number" name="Kapasitas_ODP" class="form-control" id="Kapasitas_ODP" placeholder="Masukan kapasitas ODP" required>
+          <input type="number" min="0" pattern="[0-9]{10}" name="Kapasitas_ODP" class="form-control" id="Kapasitas_ODP" placeholder="Masukan kapasitas ODP" required>
         </div>
         <div class="form-group">
           <label for="text-input" class="control-label">Status Port</label>
@@ -137,12 +137,16 @@ if ($state != "login") {
         <div class="form-group">
           <button type="button" id="myBtn" class="btn btn-success btn-block">Submit</button>
         </div>
-        <div>
+        <div class="form-group" style="padding-left:35%; ">
+          <a href="index.php">
+            <button type="button" class="btn btn-primary">Kembali</button>
+          </a>
           <a href="logout.php">
-            <button type="button" class="btn btn-warning">Logout</button>
+            <button type="button" class="btn btn-warning">Log Out</button>
           </a>
         </div>
       </form>
+
 
       <!-- Modal HTML -->
       <div id="myModal" class="modal fade" tabindex="-1" role="dialog">

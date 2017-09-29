@@ -46,14 +46,14 @@
           <input type="text" name="Kode_QR_Port" class="form-control" id="Kode_QR_Port" placeholder="Masukan kode QR Port" required="">
           <div id="umpanbalik"></div>
     </div>
-    
+
     <script type="text/javascript">
       $(document).ready(function(){
-        $('#umpanbalik').load('cekMigration.php').show();
+        $('#umpanbalik').load('cekTable.php').show();
 
         $('#Kode_QR_Port').keyup(function() {
           //$('#umpanbalik').append('d');
-          $.post("cekMigration.php",
+          $.post("cekTable.php",
             {kode_qr: $('#Kode_QR_Port').val()},
             function(response){
               $('#umpanbalik').html(response);
@@ -62,7 +62,7 @@
       });
     </script>
 
-        <div class="form-group">   
+        <div class="form-group">
         <label for="text-input" class="control-label">Nama ODP</label>
 
     <div class="form-group">
@@ -76,22 +76,22 @@
               <select class="form-control" name="odp2" id="odp2" onblur="combine()" required>
                   <option value="BBS">BBS</option>
                   <option value="BTL">BTL</option>
-                  <option value="KEN">GOD</option>
+                  <option value="GOD">GOD</option>
                   <option value="KBU">KBU</option>
                   <option value="KEN">KEN</option>
-                  <option value="KEN">KGD</option>
-                  <option value="KEN">KLS</option>
+                  <option value="KGD">KGD</option>
+                  <option value="KLS">KLS</option>
                   <option value="PGR">PGR</option>
-                  <option value="KEN">PKM/KLU</option>
-                  <option value="KEN">SMN</option>
-                  <option value="PGR">WNS</option>
-                  <option value="KEN">WTS</option>
+                  <option value="PKM/KLU">PKM/KLU</option>
+                  <option value="SMN">SMN</option>
+                  <option value="WNS">WNS</option>
+                  <option value="WTS">WTS</option>
               </select>
             </div>
 
             <div class="form-group col-sm-3">
               <label>ODC</label>
-              <input type="number" min="0" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required="">
+              <input type="text" class="form-control" value="" name="odp3" id="odp3" onblur="combine()" required="">
             </div>
 
             <div class="form-group col-sm-3">
@@ -154,17 +154,16 @@
         <div class="form-group">
           <button type="button" id="myBtn" class="btn btn-success btn-block">Submit</button>
         </div>
-        <!--
-        <div class="form-group">
-          <input type="button" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-success btn-block" />
-        </div>
-      -->
-      <div>
-         <a href="logout.php">
-         <button type="button" class="btn btn-warning">Logout</button>
+        <div class="form-group" style="padding-left:35%; ">
+          <a href="index.php">
+            <button type="button" class="btn btn-primary">Kembali</button>
           </a>
-      </div>      
+          <a href="logout.php">
+            <button type="button" class="btn btn-warning">Log Out</button>
+          </a>
+        </div>
       </form>
+
 
       <!-- Modal HTML -->
       <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
